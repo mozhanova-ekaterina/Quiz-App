@@ -1,4 +1,6 @@
-export const questions = [
+import { EQuestion } from "./models";
+
+export const questions: EQuestion[] = [
   {
       question: 'question 1',
       answers: [
@@ -10,6 +12,15 @@ export const questions = [
   },
   {
       question: 'question 2',
+      answers: [
+          { text: 'A section of the webpage', correct: false },
+          { text: 'A container for storing data values', correct: false },
+          { text: 'A type of JavaScript function', correct: true },
+          { text: 'An operation in mathematics', correct: false }
+      ]
+  },
+  {
+      question: 'question 3',
       answers: [
           { text: 'A section of the webpage', correct: false },
           { text: 'A container for storing data values', correct: false },
