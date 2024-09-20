@@ -15,9 +15,9 @@ const answerHandle = (answer: EAnswer, id: number, latest: boolean) => {
 </script>
 
 <template>
-  <main class="h-screen">
+  <main class="h-screen bg-[#fffaf7] flex flex-col items-center gap-3 p-10">
     <Card v-for="(question, index) in questions" :question="question" :id="`${index}`" @choose-answer="answerHandle"
       :latest="questions.length - 1 === index" />
-    <Finish :selectedAnswers="selectedAnswers" v-if="finish"/>
+    <Finish :selectedAnswers="selectedAnswers" v-if="finish" />
   </main>
 </template>
