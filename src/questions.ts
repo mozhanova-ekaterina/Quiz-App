@@ -1,31 +1,31 @@
 import { EQuestion } from "./models";
 
 export const questions: EQuestion[] = [
-  {
-      question: 'question 1',
-      answers: [
-          { text: 'A section of the webpage', correct: false },
-          { text: 'A container for storing data values', correct: true },
-          { text: 'A type of JavaScript function', correct: false },
-          { text: 'An operation in mathematics', correct: false }
-      ]
-  },
-  {
-      question: 'question 2',
-      answers: [
-          { text: 'A section of the webpage', correct: false },
-          { text: 'A container for storing data values', correct: false },
-          { text: 'A type of JavaScript function', correct: true },
-          { text: 'An operation in mathematics', correct: false }
-      ]
-  },
-  {
-      question: 'question 3',
-      answers: [
-          { text: 'A section of the webpage', correct: false },
-          { text: 'A container for storing data values', correct: false },
-          { text: 'A type of JavaScript function', correct: true },
-          { text: 'An operation in mathematics', correct: false }
-      ]
-  },
+    {
+        question: 'Что носит дьявол в известном фильме?',
+        answers: [
+            { text: 'Christian Dior', correct: false },
+            { text: 'Prada', correct: true },
+            { text: 'Rolex', correct: false },
+            { text: 'Gucci', correct: false }
+        ]
+    },
+    {
+        question: 'Сколько километров в одной миле?',
+        answers: [
+            { text: '1,3км', correct: false },
+            { text: '1км', correct: false },
+            { text: '1,6км', correct: true },
+            { text: '2,6км', correct: false }
+        ]
+    },
+    {
+        question: 'Как переводится с французского языка слово «фуршет»?',
+        answers: [
+            { text: 'Стол', correct: false },
+            { text: 'Бокал', correct: false },
+            { text: 'Вилка', correct: true },
+            { text: 'Ложка', correct: false }
+        ]
+    },
 ];

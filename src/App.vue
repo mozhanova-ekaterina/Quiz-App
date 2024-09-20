@@ -7,10 +7,12 @@ import { EAnswer } from "./models";
 
 const selectedAnswers = ref([]) as Ref<EAnswer[]>;
 const finish = ref(false);
+const visibleIndex = ref(0);
 const answerHandle = (answer: EAnswer, id: number, latest: boolean) => {
   if (selectedAnswers.value[id]) selectedAnswers.value[id] = answer;
   else selectedAnswers.value.push(answer);
   if (latest) finish.value = true;
+  visibleIndex.value += 1;
 };
 </script>
 
@@ -22,6 +24,7 @@ const answerHandle = (answer: EAnswer, id: number, latest: boolean) => {
       :id="`${index}`"
       @choose-answer="answerHandle"
       :latest="questions.length - 1 === index"
+      :visible="visibleIndex === index"
     />
     <Finish :selectedAnswers="selectedAnswers" v-if="finish" />
   </main>

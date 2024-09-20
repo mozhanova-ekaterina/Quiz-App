@@ -16,6 +16,10 @@ const props = defineProps({
     type: Boolean,
     required: true,
   },
+  visible: {
+    type: Boolean,
+    required: true,
+  },
 });
 const emits = defineEmits(["chooseAnswer"]);
 
@@ -25,14 +29,18 @@ const onChooseAnswer = () => {
 };
 </script>
 <template>
-  <div class="border p-3 rounded-md min-w-[600px]">
+  <div v-if="visible" class="border p-3 rounded-md min-w-[600px]">
     <h2 class="text-center mb-3">{{ question.question }}</h2>
     <ul class="flex flex-col gap-2">
       <li
         v-for="(answer, i) in question.answers"
         class="flex justify-between gap-5"
       >
-        <label :for="`${id + i}`">{{ answer.text }}</label>
+        <label
+          :for="`${id + i}`"
+          class="grow border-b transition-all cursor-pointer hover:border-b-black"
+          >{{ answer.text }}</label
+        >
         <input
           type="radio"
           :id="`${id + i}`"
@@ -42,8 +50,8 @@ const onChooseAnswer = () => {
       </li>
     </ul>
     <div class="text-right mt-3">
-      <Button v-if="latest" @click="onChooseAnswer" text="Finish" />
-      <Button v-else @click="onChooseAnswer" text="Next" />
+      <Button v-if="latest" @click="onChooseAnswer" text="Финиш" />
+      <Button v-else @click="onChooseAnswer" text="Далее" />
     </div>
   </div>
 </template>
